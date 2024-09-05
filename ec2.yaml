@@ -17,7 +17,7 @@
         - botocore
 
   vars:
-    ansible_python_interpreter: /usr/local/lib/python3.10
+    ansible_python_interpreter: /usr/bin/python3.10
     keypair: Mumbai
     instance_type: t2.micro
     image_id: ami-0f5ee92e2d63afc18
