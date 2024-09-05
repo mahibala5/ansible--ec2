@@ -8,10 +8,8 @@
     - name: Print python version
       debug:
         msg: "Using Python {{ ansible_python_version }}"
-    - name: Install dependencies
-      pip:
-        name: "{{ item }}"
-        executable: /usr/bin/python3.10 -m pip
+    - name: Install dependencies using shell
+      shell: "pip3 install {{ item }}"
       loop:
         - boto3
         - botocore
