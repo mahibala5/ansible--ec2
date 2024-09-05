@@ -61,7 +61,7 @@
 
     - name: Launch the new EC2 Instance
       amazon.aws.ec2_instance:
-        vpc_security_group_ids: "{{ basic_firewall.group_id }}"
+        security_group: "{{ security_group }}"
         instance_type: "{{ instance_type }}"
         image_id: "{{ image_id }}"
         wait: "{{ wait }}"
@@ -77,4 +77,5 @@
           sudo systemctl enable docker
           sudo docker run -d --name 2048 -p 3000:3000 sevenajay/2048:latest
       register: ec2
+
 
