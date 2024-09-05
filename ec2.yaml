@@ -11,10 +11,11 @@
     - name: Install dependencies
       pip:
         name: "{{ item }}"
-        executable: /usr/bin/python3.10
+        executable: /usr/bin/python3.10 -m pip
       loop:
-       - boto3
-       - botocore
+        - boto3
+        - botocore
+
   vars:
     ansible_python_interpreter: /usr/bin/python3.10
     keypair: Mumbai
